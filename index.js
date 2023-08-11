@@ -1,4 +1,5 @@
-import ProductManager from './productManager.js'
+//const ProductManager = require('./ProductManager')
+import  ProductManager  from './src/productManager.js'
 
 const mockProduct = {
     title: 'Producto prueba',
@@ -12,10 +13,10 @@ const mockFailProduct = {
     title: 'Producto prueba',
     price: 200,
     thumbnail: 'Sin imagen',
-    code: 'abc123',
+    code: 'abc1243',
     stock: 25
 }
-const productManager = new ProductManager('./products.json') //----> aca le da la ruta o path, cuando lo instancio
+const productManager = new ProductManager('./products.json')
 
 const test = async () => {
     console.log('\n---TEST---')
