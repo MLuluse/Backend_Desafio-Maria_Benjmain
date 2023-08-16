@@ -58,12 +58,12 @@ class ProductManager {
 
   //obtiene el producto desde el ID
   async getProductById(id) {
-    if (!fs.existsSync(this.#path)) return "Error el producto no existe";
-    let data = await fs.promises.readFile(this.#path, "utf-8");
-    let products = JSON.parse(data);
-    let product = products.find((item) => item.id === id);
+    if (!fs.existsSync(this.#path)) return "Error el producto no existe"
+    let data = await fs.promises.readFile(this.#path, "utf-8")
+    let products = JSON.parse(data)
+    let product = products.find((item) => item.id === id)
     if (!product) {
-      return "producto no encontrado";
+      return "producto no encontrado"
     }
     return product;
   }
@@ -95,10 +95,10 @@ class ProductManager {
   async deleteProduct(id) {
     if (!fs.existsSync(this.#path)) return "Error no exixte el producto";
     let isFound = false;
-    let data = await fs.promises.readFile(this.#path, "utf-8");
+    let data = await fs.promises.readFile(this.#path, "utf-8")
     let products = JSON.parse(data);
-    let newProducts = products.filter((item) => item.id !== id);
-    if (products.length !== newProducts.length) return 'El producto se elimino con exito';
+    let newProducts = products.filter((item) => item.id !== id)
+    if (products.length !== newProducts.length) return 'El producto se elimino con exito'
     if (!isFound) return "El producto no existe";
     await fs.promises.writeFile(
       this.#path,
